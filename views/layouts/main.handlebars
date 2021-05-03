@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+              data-target="navbarBasic">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+          </a>
+      </div>
+
+      <div id="navbarBasic" class="navbar-menu">
+          <div class="navbar-start">
+              <a href="/" class="navbar-item button is-danger is-dark is-outlined is-light">Home</a>
+
+              <a href="/dashboard" class="navbar-item button is-danger is-outlined is-light">Dashboard</a>
+          </div>
+
+          <div class="navbar-end">
+              <div class="navbar-item">
+                  <div class="buttons">
+                    {{#if loggedIn}}  
+                    <a id="logout" class="button is-danger is-outlined is-light">Logout</a>
+                    {{else}}
+                    <a href="/login" class="button is-danger is-outlined is-light">Log in</a>
+                    {{/if}}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav>
+ 
+<!-- this is where the body sections will be added to the main handlebars layout -->
+
+{{{body}}}
+
+  </body>
+</html>

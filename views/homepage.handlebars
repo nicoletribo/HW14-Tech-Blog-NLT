@@ -1,0 +1,31 @@
+ <section class="hero has-background-danger-dark">
+    <div class="hero-body">
+      <p class="title has-text-white">
+        The Tech Blog
+      </p>
+    </div>
+  </section>
+  
+  <div class="columns is-multiline" id="card-container">
+  <div class="column is-full spacer">
+  </div>
+  {{#each posts as |post| }}
+  <div class="column is-full">
+    <div class="card">
+      <a href="/posts/{{post.id}}">
+        <header class="card-header has-background-danger-dark">
+          <p class="card-header-title has-text-white">
+            {{post.title}}
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content has-text-black">
+            <p>Created by: {{post.user.username}}</p>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  {{post}}
+  {{/each}}
+</div>
