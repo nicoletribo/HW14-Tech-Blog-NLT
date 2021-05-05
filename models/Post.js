@@ -19,6 +19,7 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
+      
       creator_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -36,5 +37,6 @@ Post.init(
     }
   );
 
-  model.exports = Post;
+  module.exports = Post;
+
 

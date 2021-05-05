@@ -29,20 +29,19 @@ router.post('/login', async (req, res) => {
       });
   
       if (!UserData) {
-        res
-          .status(400).json({ message: 'Incorrect email or password. Please try again!' });
+        res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
         return;
       }
   
       const validPassword = await UserData.checkPassword(req.body.password);
   
       if (!validPassword) {
-        res
-          .status(400).json({ message: 'Incorrect email or password. Please try again!' });
+        res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
         return;
       }
   
       req.session.save(() => {
+        req.session.username = userData.id;
         req.session.loggedIn = true;
   
         res

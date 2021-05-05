@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
+const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+//CREATE new post
+router.post('/', async (req, res) => {
     try {
       const newPost = await Post.create({
         title: req.body.title,
@@ -14,6 +16,5 @@ router.post('/', withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });
-  
   
   module.exports = router;

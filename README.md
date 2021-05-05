@@ -7,6 +7,8 @@ Our task was to build a CMS-style blog site similar to a Wordpress site, where d
 
 ## Link to Deployed Application
 
+https://hw14-tech-blog-nlt.herokuapp.com/
+
 ## Questions
 
   If you have any questions you can find me on Github here: (https://github.com/nicoletribo)

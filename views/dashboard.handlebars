@@ -7,14 +7,31 @@
   </section>
 <div class="columns is-multiline" id="card-container">
   <div class="column is-full spacer">
-    <a href="/newpost">
+    <a href="/post">
     <button class="button has-background-danger-dark has-text-white" id="new-post-button">Create new post</button>
     </a>
   </div>
-  {{!-- blog posts added here --}}
-
-
-
-  {{!-- blog posts added here --}}
+  <div class="columns is-multiline" id="card-container">
+  <div class="column is-full spacer">
+  </div>
+  {{#each posts as |post| }}
+  <div class="column is-full">
+    <div class="card">
+      <a href="/posts/{{post.id}}">
+        <header class="card-header has-background-danger-dark">
+          <p class="card-header-title has-text-white">
+            {{post.title}}
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content has-text-black">
+            <p>Created by: {{user.username}} on {{format_date post.date_created}}</p>
+          </div>
+        </div>
+    </div>
+      </a>
+  </div>
+  {{/each}}
+</div>
   </div>
   <script href="./js/dashboard.js"></script>
